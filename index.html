@@ -326,7 +326,7 @@
 <div class="app-container">
   <!-- HEADER -->
   <div class="header">
-    <h1>⚡ REACTOR DINÁMICO <small>derivada · tasa de cambio</small></h1>
+    <h1>REACTOR DINÁMICO <small>derivada · tasa de cambio</small></h1>
     <div class="status-badge">
       <span class="status-dot" id="statusDot"></span>
       <span class="status-text" id="statusText">⏸ en pausa</span>
@@ -387,7 +387,7 @@
       </div>
       <!-- PANEL EDUCATIVO -->
       <div class="edu-panel">
-        <div class="edu-text" id="eduText">💡 El tanque está en equilibrio inicial.</div>
+        <div class="edu-text" id="eduText">El tanque está en equilibrio inicial.</div>
         <div class="edu-equation" id="eduEquation">dV/dt = Q_in - Q_out</div>
       </div>
     </div>
@@ -583,10 +583,10 @@
 
       // texto educativo
       let msg = '';
-      if (Math.abs(deriv) < 0.02) msg = '⚖️ El volumen se mantiene estable. La derivada es cercana a cero (equilibrio).';
-      else if (deriv > 0) msg = `📈 El volumen está aumentando (dV/dt = ${deriv.toFixed(2)}). El flujo de entrada supera al de salida.`;
-      else msg = `📉 El volumen está disminuyendo (dV/dt = ${deriv.toFixed(2)}). El flujo de salida supera al de entrada.`;
-      eduText.innerHTML = '💡 ' + msg;
+      if (Math.abs(deriv) < 0.02) msg = 'El volumen se mantiene estable. La derivada es cercana a cero (equilibrio).';
+      else if (deriv > 0) msg = `El volumen está aumentando (dV/dt = ${deriv.toFixed(2)}). El flujo de entrada supera al de salida.`;
+      else msg = `El volumen está disminuyendo (dV/dt = ${deriv.toFixed(2)}). El flujo de salida supera al de entrada.`;
+      eduText.innerHTML = '' + msg;
       eduEquation.textContent = `dV/dt = ${deriv.toFixed(3)} L/s  ·  Q_in = ${STATE.inflow.toFixed(1)}  Q_out = ${STATE.outflow.toFixed(1)}`;
 
       drawTank(vol, STATE.skin);
